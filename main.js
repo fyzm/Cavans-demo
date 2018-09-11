@@ -16,7 +16,7 @@ pen.onclick = function(){
 eraser.onclick = function() {
   eraserEnabled =true
   eraser.classList.add('active')
-  eraser.classList.remove('active')
+  pen.classList.remove('active')
 }
 clear.onclick = function(){
   context.clearRect(0,0,yyy.width,yyy.height);
@@ -40,16 +40,16 @@ red.onclick = function(){
 green.onclick = function(){
   context.fillStyle = 'green'
   context.strokeStyle = 'green'
-  green.classList.add('active')
   red.classList.remove('active')
+  green.classList.add('active')
   blue.classList.remove('active')
 }
 blue.onclick = function(){
   context.fillStyle = 'blue'
   context.strokeStyle = 'blue'
-  blue.classList.add('active')
   green.classList.remove('active')
   red.classList.remove('active')
+  blue.classList.add('active')
 }
 thin.onclick = function(){
   lineWidth = 5
@@ -87,7 +87,7 @@ function drawLine(x1, y1, x2, y2) {
   context.beginPath();
   context.strokeStyle = 'black'
   context.moveTo(x1, y1) // 起点
-  context.lineWidth = 5
+  context.lineWidth = lineWidth
   context.lineTo(x2, y2) // 终点
   context.stroke()
   context.closePath()
