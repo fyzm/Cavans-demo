@@ -78,14 +78,12 @@ function autoSetCanvasSize(canvas) {
 
 function drawCircle(x, y, radius) {
   context.beginPath()
-  context.fillStyle = 'black'
   context.arc(x, y, radius, 0, Math.PI * 2);
   context.fill()
 }
 
 function drawLine(x1, y1, x2, y2) {
   context.beginPath();
-  context.strokeStyle = 'black'
   context.moveTo(x1, y1) // 起点
   context.lineWidth = lineWidth
   context.lineTo(x2, y2) // 终点
@@ -157,6 +155,7 @@ function listenToMouse(canvas) {
       }
     }
     canvas.onmousemove = function(aaa) {
+      console.log('边摸边动')
       var x = aaa.clientX
       var y = aaa.clientY
 
@@ -175,6 +174,7 @@ function listenToMouse(canvas) {
 
     }
     canvas.onmouseup = function(aaa) {
+      console.log('摸完了')
       using = false
     }
   }
